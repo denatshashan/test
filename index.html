@@ -44,4 +44,25 @@
 
   <script>
     const prixLogement = {
-      "1": {
+      "1": { "Lausanne": 840, "Morges": 900, "Vevey": 880 },
+      "2": { "Lausanne": 1200, "Morges": 1300, "Vevey": 1250 },
+      "3": { "Lausanne": 1600, "Morges": 1700, "Vevey": 1650 }
+    };
+
+    const piecesSelect = document.getElementById("pieces");
+    const lieuSelect = document.getElementById("lieu");
+    const resultatDiv = document.getElementById("resultat");
+
+    function mettreAJourPrix() {
+      const pieces = piecesSelect.value;
+      const lieu = lieuSelect.value;
+      const prix = prixLogement[pieces][lieu];
+      resultatDiv.textContent = `Prix estimé : ${prix} CHF`;
+    }
+
+    piecesSelect.addEventListener("change", mettreAJourPrix);
+    lieuSelect.addEventListener("change", mettreAJourPrix);
+  </script>
+
+</body>
+</html>
