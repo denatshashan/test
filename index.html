@@ -2,10 +2,46 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Page test</title>
+  <title>Simulateur de prix de logement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+    select {
+      padding: 8px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    #resultat {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #2c3e50;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenue sur ma page test</h1>
-  <p>Si tu vois ce texte, tout fonctionne !</p>
-</body>
-</html>
+
+  <h1>Simulateur de prix de logement</h1>
+
+  <label for="pieces">Nombre de pièces :</label>
+  <select id="pieces">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+
+  <label for="lieu">Lieu :</label>
+  <select id="lieu">
+    <option value="Lausanne">Lausanne</option>
+    <option value="Morges">Morges</option>
+    <option value="Vevey">Vevey</option>
+  </select>
+
+  <div id="resultat">Prix estimé : —</div>
+
+  <script>
+    const prixLogement = {
+      "1": {
